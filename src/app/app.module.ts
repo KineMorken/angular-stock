@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { StocksService } from './services/stocks.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +13,8 @@ import { SummaryComponent } from './components/summary/summary.component';
   ],
   imports: [
     BrowserModule,
-    HttpClient,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [StocksService],
   bootstrap: [AppComponent]
