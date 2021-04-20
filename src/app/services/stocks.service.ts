@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 
 let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
 let service: string = 'https://angular2-in-action-api.herokuapp.com';
@@ -20,20 +21,20 @@ export class StocksService {
     return stocks;
   }
 
-  add(stock: any) {
+  add(stock: string) {
     stocks.push(stock);
     return this.get();
   }
 
-  remove(stock: any) {
+  remove(stock: string) {
     stocks.splice(stocks.indexOf(stock), 1);
     return this.get();
   }
 
-  load(symbols: any) {
+  load(symbols: string[]) {
     if (symbols) {
       return this.http.get(service + '/stocks/snapshot?symbols=' + symbols.join());
     }
-    return null;
+    return of([])
   }
 }
