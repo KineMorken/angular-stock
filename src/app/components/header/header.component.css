@@ -1,0 +1,11 @@
+.mdl-layout__content {
+  padding: 20px;
+}
+
+.header {
+  background: cornflowerblue;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
